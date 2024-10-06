@@ -322,6 +322,13 @@ const date = new Date().getFullYear();
 document.getElementById("date").innerHTML = `© ${date} SmartAgro | All Rights Reserved.`
 
 
+document.getElementById("play").addEventListener("click" ,() => {
+  document.getElementById("play").classList.add("hov1");
+setTimeout((e) => {
+  document.getElementById("play").classList.remove("hov1");
+},100);
+}); 
+
 
 
 
