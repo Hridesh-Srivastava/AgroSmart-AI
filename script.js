@@ -318,8 +318,8 @@ const typed = new Typed('.multi-text', {
   loop: true,
 });
 
-
-const date = new Date.getFullYear();
+const date = new Date().getFullYear();
+document.getElementById("date").innerHTML = `© ${date} SmartAgro | All Rights Reserved.`
 
 
 
