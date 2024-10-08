@@ -332,8 +332,94 @@ setTimeout((e) => {
 
 
 
+let menu = document.getElementById("menu");
+let close = document.getElementById("close");
+
+menu.onclick=()=>{
+  menu.classList.toggle('active');
+}
+
+
+document.getElementById("bt1").addEventListener("click" , () => {
+  document.getElementById("bt1").classList.add("bt");
+
+  setTimeout(() => {
+    document.getElementById("bt1").classList.remove("bt");
+  },100);
+});
 
 
 
+const typed1 = new Typed('.multi-text1', {
+  strings: [
+      "AI-driven solutions for modern farming.",
+      "Empowering sustainable agriculture.",
+  ],
+  typeSpeed: 75,
+  backSpeed: 75,
+  backDelay: 1000,
+  loop: true,
+});
 
+
+const typed2 = new Typed('.multi-text2', {
+  strings: [
+      "Revolutionizing crop yield with precision AI.",
+      "Innovative insights for smarter farming."
+  ],
+  typeSpeed: 75,
+  backSpeed: 75,
+  backDelay: 1000,
+  loop: true,
+});
+
+
+const typed3 = new Typed('.multi-text3', {
+  strings: [
+      "Pioneered by SRHU Innovators.",
+      "Transforming Agriculture with Smart Tech."
+  ],
+  typeSpeed: 75,
+  backSpeed: 75,
+  backDelay: 1000,
+  loop: true,
+});
+
+
+const typed4 = new Typed('.multi-text4', {
+  strings: [
+      "Farming the Future: Empowering Agriculture with AI Solutions.",
+      "Cultivating Innovation through Agriculture AI."
+  ],
+  typeSpeed: 75,
+  backSpeed: 75,
+  backDelay: 1000,
+  loop: true,
+});
+
+
+const typed5 = new Typed('.multi-text5', {
+  strings: [
+      "Our Services",
+      "Our Services"
+  ],
+  typeSpeed: 75,
+  backSpeed: 75,
+  backDelay: 1000,
+  loop: true,
+});
+
+
+const typed6 = new Typed('.multi-text6', {
+  strings: [
+      "SmartAgro",
+      "Developed",
+      "By",
+      "SRHU"
+  ],
+  typeSpeed: 75,
+  backSpeed: 75,
+  backDelay: 1000,
+  loop: true,
+});
 

@@ -20,7 +20,7 @@ html, body{
     width: 100%;
 }
 .loader{
-    background-color: #03051c;
+    background-color: #0c2001;
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -33,7 +33,7 @@ html, body{
 }
 .loader h1 span{
     display: inline-block;
-    color: #00a6ff;
+    color: #37ff00;
     font-weight: lighter;
 }
 .page1{
@@ -43,7 +43,7 @@ html, body{
 .cursor{
     width: 7vw;
     height: 7vw;
-    background-color: #015dfd;
+    background-color: #2a9d07;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,7 +66,7 @@ html, body{
     z-index: 6;
     height: 67vh;
     width: 100vw;
-    background-color: #105fd4;
+    background-color: #35c007;
 }
 .menu-header{
     height: 40px;
@@ -88,6 +88,7 @@ html, body{
 }
 .menu-header #close{
     position: relative;
+    color:white;
 }
 .menu-header #close::after{
     content: '';
@@ -172,13 +173,13 @@ html, body{
     content: '';
     position: absolute;
     height: 2px;
-    width: 50%;
+    width: 100%;
     bottom: 0;
     left: 0;
     transform: scaleX(0);
     background-color: #000;
     transform-origin: bottom right;
-    transition: transform .35s ease-out;
+    transition: transform .5s ease-out;
 }
 .menu-sec .links h3:hover::after{
     transform: scaleX(1);
@@ -933,4 +934,14 @@ footer .footer-bottom h1 span{
     background-color:rgb(255, 250, 250);
     opacity:.5;
     border-color: rgb(255, 250, 250);
+}
+
+.active{
+    display: block;
+}
+
+.bt{
+    color:white;
+    background-color: #000;
+    opacity: .5;
 }
