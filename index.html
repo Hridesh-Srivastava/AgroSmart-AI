@@ -9,7 +9,34 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
     <link rel="stylesheet" href="./style.css">
+    <style>
+        .borderB{
+            border-bottom: 2px solid black;
+            width: 100%;
+            padding-left: 10px;
+            box-sizing: border-box;
+        }
+        .card1 {
+            width: 300px;
+            height: 200px;
+            background-color: #f0f0f0;
+            border: 2px solid #040404;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+          }
+          
+          .card1:hover {
+            transform: scale(1.15);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          }
+          
+    </style>
 </head>
 <body>
     <div class="main">
@@ -24,8 +51,8 @@
         <div class="page1">
             <div class="menu" id="menu">
                 <div class="menu-header">
-                   <h2><a href="https://srhu.edu.in/">Engineered by SRHU Pioneers</a></h2>
-                   <h2 style="color:rgb(0, 0, 0);font-weight:500" id="close">Close &rarr;</a></h2>
+                   <h2><a href="https://srhu.edu.in/"><span class="multi-text10"></span></a></h2>
+                   <h2 style="color:rgb(0, 0, 0);font-weight:300;border:2px solid black;border-radius:8px;background-color:rgb(253, 29, 29);" id="close">Close &rarr;</a></h2>
                 </div>
                 <div class="menu-sec">
                     <div class="vid">
@@ -34,13 +61,14 @@
                             <h3 style="border:2px solid black;border-radius:8px;margin-bottom:-20px;" id="play"><a style="color:rgb(23, 22, 22);text-decoration:none;" href="https://www.sciencedirect.com/science/article/abs/pii/S0959652623044967">  Unveil AI in Action <i style="color:black" class="ri-arrow-right-up-line"></i></a></h3>
                         </div>
                     </div>
+                    
                     <div class="links">
                         <h3>Home &rarr;</h3>
                         <h3><a style="color:black;text-decoration:none;" href="https://forms.srhu.edu.in/jobs/">Apply Now &rarr;</a></h3>
-                        <h3>Our Services &rarr;</h3>
-                        <h3>About Us &rarr;</h3>
-                        <h3>Contact Us &rarr;</h3>
-                        <button id="bt1" style="background-color: rgb(6, 59, 6);color:red;">Explore More </button>
+                        <h3><a style="text-decoration:none;color:black;" href="./services/service.html">Our Services &rarr;</a></h3>
+                        <h3><a style="text-decoration:none;color:black;" href="./abouts/about.html">About Us &rarr;</a> </h3>
+                        <h3> <a style="text-decoration:none;color:black;" href="./contactUs/contact.html">Contact Us &rarr;</a></h3>
+                        <button id="bt1" style="background-color: rgb(6, 59, 6);color:red;"><a style="text-decoration:none;color:red;" href="https://srhu.edu.in/our-story/">Explore More About SRHU</a> </button>
                     </div>
                 </div>
                 <div class="menu-border"></div>
@@ -48,7 +76,7 @@
                     <h4 id="date"></h4>
                     <div class="social">
                         <h2 style="margin-right:40px;">
-                      <a style="text-decoration:none;color:black;" href="https://x.com/SRHUniversity?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><p style="font-weight:normal">   Connect with us :   </p> <i class="fa-brands fa-square-x-twitter"></i></a>  
+                      <a style="text-decoration:none;color:black;" href="https://x.com/SRHUniversity?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><p style="font-weight:normal">   <span class="multi-text11"></span>   </p> <i class="fa-brands fa-square-x-twitter"></i></a>  
                       <a style="text-decoration:none;color:black;" href="https://www.instagram.com/srhusocial/?hl=en"><i class="fa-brands fa-instagram"></i> </a>  
                       <a style="text-decoration:none;color:black;" href="https://www.linkedin.com/school/s-r-h-u/"><i class="fa-brands fa-linkedin"></i> </a>  
                       <a style="text-decoration:none;color:black;" href="https://www.facebook.com/SRHUOfficial/"><i class="fa-brands fa-facebook"></i></a>  
@@ -56,7 +84,7 @@
                  </div>
                 </div>
             </div>
-            <div style="background-color: rgb(35, 155, 8);" class="cursor"><h4 style="text-align:center;font-weight:bolder">Innovate Farming!</h4></div>
+            <div style="background-color: rgb(74, 167, 53);" class="cursor"><h4 style="text-align:center;font-weight:normal;color:white;">Innovate Farming!</h4></div>
             <video autoplay loop muted src="./Assets/1988560-uhd_3840_2160_24fps.mp4"></video>
             <div class="inner-content">
                 <nav>
@@ -68,12 +96,14 @@
             </h2>
             </div>
         </div>
-        <div class="page2">
+        <div style="background:linear-gradient(to right,rgb(243, 243, 118), rgb(99, 251, 99), rgb(243, 243, 118));" class="page2">
+            <hr>
+
             <div class="page2-top">
                 <div class="first-text">
                     <div id="one"><h3><span class="multi-text1"></span></h3></div>
                     <div id="two"><h3><span class="multi-text2"></span></h3></div>
-                     </div>
+                    </div>
                 <div class="second-text">
                     <h3><span class="multi-text3"></span></h3>
                 </div>
@@ -81,21 +111,74 @@
             <div class="page2-top-border"></div>
             <div class="page2-bottom">
                 <div class="btm-text"><h2>
-                    <div class="up"><span>&nbsp;At SmartAgro, we are a team of innovators from SRHU, driven by the goal to revolutionize</span></div></h2>
-                    <h2><div class="up"><span>agriculture through AI technology. Our mission is to empower farmers with intelligent solutions that optimize yield for a better future.</span></div></h2>
-                </div>
+                    <div class="up" style="overflow: visible;"><span style="overflow: visible;">&nbsp;At SmartAgro, we are a team of innovators from SRHU, driven by the goal to revolutionize</span></div></h2>
+                    <h2><div class="up" style="overflow: visible;"><span style="overflow: visible;">agriculture through AI technology. <!--Our mission is to empower farmers with intelligent solutions that predict harvests for a better future. --></span></div></h2>
+                 <br><br> <div class="borderB"></div>
+            </div>
             </div>
         </div>
-        <div class="page3">
-            <div class="page3-text">
-                <h1>Explore our services</h1>
-                <h1>& engagement models</h1>
+
+     
+
+
+        <div style="background:linear-gradient(to right,rgb(243, 243, 118), rgb(99, 251, 99), rgb(243, 243, 118));" class="page3">
+            <div style="overflow:visible;margin-top:-800px;" class="page3-text">
+               <h1><span class="multi-text9"></span></h1>
+                <section style="margin-top: -50px;" class="section__container explore__container">
+                    <div class="explore__header">
+                      <div class="explore__nav">
+                      </div>
+                    </div>
+                    <div  class="explore__grid">
+                      <div class="card1" style="border:2px solid #000000 ;border-radius:8px;background-image:url(./Assets/working1.jpg);background-position:center;" class="explore__card">
+                        <span style="font-size: xx-large;"><i class="fa-solid fa-robot" style="color: #ffffff;"></i></span>
+                        <h3 style="color: white;">AI-Driven Crop Monitoring</h3>
+                        <br>
+                        <p style="color: white;">
+                            We are developing advanced AI tools to monitor crop health in real time. Our technology uses image recognition and environmental data to detect early signs of disease, nutrient deficiencies, and optimal harvest times.
+                        </p>
+                        
+                      </div>
+                      <div class="card1" style="border:2px solid rgb(0, 0, 0);border-radius:8px;background-image:url(./Assets/working2.jpg);background-position:center;" class="explore__card">
+                        <span style="font-size: xx-large;"><i class="fa-solid fa-building-wheat" style="color: #ffffff;"></i></span>
+                        <h3 style="color: white;">Smart Irrigation Systems</h3>
+                        <br>
+                        <p style="color: white;">
+                            Our AI-powered irrigation system optimizes water usage by analyzing soil moisture, weather forecasts, and crop needs. This reduces water waste and ensures efficient watering for sustainable farming.
+                        </p>
+                      </div>
+                      <div class="card1" style="border:2px solid rgb(0, 0, 0);border-radius:8px;background-image:url(./Assets/working3.jpg);background-position:center;" class="explore__card">
+                        <span style="font-size: xx-large;"><i class="fa-solid fa-wheat-awn" style="color: #ffffff;"></i></span>
+                        <h3 style="color: white;">Precision Farming Analytics</h3>
+                        <br>
+                        <p style="color: white;">
+                            We are working on AI algorithms to provide precision farming insights, offering tailored recommendations for fertilization, planting, and resource allocation. This maximizes yield and minimizes resource input.
+                        </p>
+                      </div>
+                      <!-- <div class="card1" style="border:2px solid rgb(0, 0, 0);border-radius:8px;" class="explore__card">
+                        <span><i class="ri-chat-poll-fill"></i></span>
+                        <h4>Chatbot customization</h4>
+                        <p>
+                          and behavior, making it more engaging and fun to interact with.
+                        </p>
+                      </div> -->
+                    </div>
+                  </section>
+                  
             </div>
         </div>
+<br>
+<br>
+<br>
+
+<br>
+<h1 style="text-align: center;font-size:4rem;color:rgb(21, 159, 21);"><span class="multi-text4"></span></h1>
+
         <div class="page4">
             <div class="page4-text">
-                <h2><span class="multi-text4"></span></h2>
-                <h2><i class="ri-corner-down-right-line"></i> <span class="multi-text5"></span></h2>
+               
+                <h1><a style="text-decoration:none;color:black;" href="./services/service.html"><i class="ri-corner-down-right-line"></i> <span class="multi-text5"></span> <i class="fa-solid fa-money-bill-wheat"></i></a></h1>
+                 
             </div>
             <div class="page4-video">
                 <div class="item">
@@ -116,25 +199,24 @@
                 </div>
             </div>
         </div>
-        <div class="page5">
+        <div style="background:linear-gradient(to left , rgb(106, 201, 106) , rgb(246, 246, 105) ,rgb(106, 201, 106) , rgb(246, 246, 105));" class="page5">
+            
             <div class="page5-top">
                 <div class="top-text">
-                    <div><h3>We operate on a simple philosophy:</h3></div>
-                    <div><h3>Quality over quantity.</h3></div>
+                        <div><h1><a style="text-decoration:none;color:black;" href="./abouts/about.html" ><i class="ri-corner-down-right-line"></i> <span class="multi-text12"></span> <i class="fa-solid fa-cow"></i></a></h1></div>
                 </div>
             </div>
             <div class="page5-top-border"></div>
             <div class="page5-bottom">
-                <div class="btm-text"><h2>
-                    <div class="up"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We partner with 5 clients each year. This</span></div></h2>
-                    <h2><div class="up"><span> allows for intense focus on the transformation</span></div></h2>
-                    <h2><div class="up"><span> and launch of your brand by our very best team,</span></div></h2>
-                    <h2><div class="up"><span> which is the only team we have.</span></div></h2>
+                <div class="btm-text">
+                    <h2><div class="up" style="overflow: visible;"><span style="overflow: visible;">&nbsp;At SmartAgro AI, we are revolutionizing the agriculture sector by integrating advanced artificial intelligence with traditional farming practices. We equip farmers with innovative tech for enhanced productivity. </span></div></h2>
                 </div>
             </div>
         </div>
+
+
         <div class="page6">
-            <video autoplay muted loop src="./Assets/RJ-BALL-BLUE-ORANGE-scaled.webm"></video>
+            <video autoplay muted loop src="./Assets/glowGlow.mp4"></video>
             <svg class="abs tl:0 fit transform rotate:-90deg" viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="49" stroke="#fff" stroke-width="0.25" fill="none" class="o:0.3 dasharray:302 dashoffset:604 (.in-view):dashoffset:400 (.in-view):tween:all,2.8s,easeOutSlow "></circle>
                 <circle cx="50" cy="50" r="49" stroke="#fff" stroke-width="0.25" fill="none" class="dasharray:302 dashoffset:302 (.in-view):dashoffset:100 (.in-view):tween:all,2.8s,easeOutSlow "></circle>
@@ -142,92 +224,91 @@
             <svg class="abs tl:0 fit transform rotate:0 (.in-view):rotate:237deg (.in-view):tween:all,2.8s,easeOutSlow " viewBox="0 0 100 100">
                 <circle cx="50" cy="1" r="1" fill="#fff"></circle>
             </svg>
-            <div class="crsr"><h2>Take it!</h2></div>
+            <div style="background-color: rgb(52, 156, 52);box-shadow:0px 3px 10px black;" class="crsr"><h2 style="text-align: center;">Grow Smart!</h2></div>
             <div class="page6-text">
                 <div class="seat">
-                    <div class="seat-span">
-                        <h2>5</h2>
-                        <h2>4</h2>
-                        <h2>3</h2>
-                        <h2>2</h2>
-                        <h2>1</h2>
+                    <div style="margin-top: -9px;" class="seat-span">
+                        <h2>S</h2>
+                        <h2>M</h2>
+                        <h2>A</h2>
+                        <h2>R</h2>
+                        <h2>T</h2>
+                        <h2>A</h2>
+                        <h2>G</h2>
+                        <h2>R</h2>
+                        <h2>O</h2>
                     </div>
-                    <h2>seat</h2>
+                    <h2>AI for Growth</h2>
                 </div>
-                <span>available for 2023</span>
+                <h3 style="color:rgb(0, 255, 0);"><span>Empowering Smart Farms.</span></h3>
             </div>
         </div>
-        <div class="page7">
-            <div class="page7-top">
-                <div class="top-text">
-                    <div><h3>Harnessing emotions</h3></div>
-                    <div><h3>to connect with your audience.</h3></div>
+        <div class="page7" style="background-image:url(./Assets/roboAIGen.jpg);background-repeat:no-repeat;background-size: cover;">
+            <div class="page7-top"></div>       
+            <div class="page8" style="background-image:url(./Assets/roboAIGen.jpg);background-repeat:no-repeat;background-size: cover;background-position:center;z-index:-2">
+                <div class="text">
                 </div>
-            </div>
+    
+            <div class="page7-bottom" style="overflow:visible;">
+                <div class="btm-text">
+            <h3 style="font-size: 2rem; font-weight: bold;"><a style="text-decoration:none;color:black;" href="./contactUs/contact.html"> <i class="ri-corner-down-right-line"></i> <span class="multi-text14"></span> <i class="fa-solid fa-tractor"></i></a>  </h3>
             <div class="page7-top-border"></div>
-            <div class="page7-bottom">
-                <div class="btm-text"><h2>
-                    <div class="up"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data matters, yet it's emotion that drives</span></div></h2>
-                    <h2><div class="up"><span>buying decisions. We don't believe in 'one size fits</span></div></h2>
-                    <h2><div class="up"><span> all.' Instead, we collaborate closely with our</span></div></h2>
-                    <h2><div class="up"><span> clients to craft unique brand experiences that</span></div></h2>
-                    <h2><div class="up"><span> resonate with their audiences and boost their</span></div></h2>
-                    <h2><div class="up"><span> KPIs.</span></div></h2>
+
+                    <h2 style="font-weight: bolder;color:#ffffff;text-shadow:0px 4px 15px rgb(0, 0, 0);"><div class="up" style="overflow: visible;"><span style="overflow: visible;">&nbsp;Have questions about how SmartAgro AI can transform your farming practices? We're here to help! Reach out to learn more about our innovative solutions designed to enhance agricultural productivity and sustainability.</span></div></h2>
                 </div>
             </div>
-        </div>
+        </div></div>
         <div class="page8">
             <div class="text">
                 <h1>Get in touch.</h1>
-                <h3><i class="ri-corner-down-right-line"></i>Contact</h3>
             </div>
             <div class="page8-top-border"></div>
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img height="275" src="./Assets/pexel1.jpg" alt="">
+                        <img height="275" src="./Assets/pexel1.jpg" alt="img1">
                     </div>
                     <div class="swiper-slide">
-                        <img height="275" src="./Assets/pexel2.jpg" alt="">
+                        <img height="275" src="./Assets/pexel2.jpg" alt="img2">
                     </div>
                     <div class="swiper-slide">
-                        <img height="275" src="./Assets/pexel3.jpg" alt="">
+                        <img height="275" src="./Assets/pexel3.jpg" alt="img3">
                     </div> 
                     <div class="swiper-slide">
-                        <img height="275" src="./Assets/pexel4.jpg" alt="">
+                        <img height="275" src="./Assets/pexel4.jpg" alt="img4">
                     </div>
                     <div class="swiper-slide">
-                        <img height="275" src="./Assets/pexel5.jpg" alt="">
+                        <img height="275" src="./Assets/pexel5.jpg" alt="img5">
                     </div>
                     <div class="swiper-slide">
-                        <img height="275" src="./Assets/pexel6.jpg" alt="">
+                        <img height="275" src="./Assets/pexel6.jpg" alt="img6">
                     </div>
                     <div class="swiper-slide">
-                        <img height="275" src="./Assets/pexel7.jpg" alt="">
+                        <img height="275" src="./Assets/pexel7.jpg" alt="img7">
                     </div>
                     <div class="swiper-slide">
-                        <img height="275" src="./Assets/pexel8.jpg" alt="">
+                        <img height="275" src="./Assets/pexel8.jpg" alt="img8">
                     </div>
                     <div class="swiper-slide">
-                        <img height="275" src="./Assets/pexel9.jpg" alt="">
+                        <img height="275" src="./Assets/pexel9.jpg" alt="img9">
                     </div>
                     <div class="swiper-slide">
-                        <img height="275" width="300" src="./Assets/pexel10.jpg" alt="">
+                        <img height="275" width="300" src="./Assets/pexel10.jpg" alt="img10">
                     </div>
                     <div class="swiper-slide">
-                        <img height="275" src="./Assets/pexel11.jpg" alt="">
+                        <img height="275" src="./Assets/pexel11.jpg" alt="img11">
                     </div>
                     <div class="swiper-slide">
-                        <img height="275" src="./Assets/pexel12.jpg" alt="">
+                        <img height="275" src="./Assets/pexel12.jpg" alt="img12">
                     </div>
                     <div class="swiper-slide">
-                        <img height="275" src="./Assets/pexel13.jpg" alt="">
+                        <img height="275" src="./Assets/pexel13.jpg" alt="img13">
                     </div>
                     <div class="swiper-slide">
-                        <img height="275" src="./Assets/pexel14.jpg" alt="">
+                        <img height="275" src="./Assets/pexel14.jpg" alt="img14">
                     </div>
                     <div class="swiper-slide">
-                        <img height="275" src="./Assets/pexel15.jpg" alt="">
+                        <img height="275" src="./Assets/pexel15.jpg" alt="img15">
                     </div>
                     
                 </div>
@@ -235,8 +316,8 @@
         </div>
         <div class="page9">
             <div class="page9-text">
-                <h4 id="head">We’re uniquely built<i class="ri-corner-right-down-line"></i></h4>
-                <h1>Meet your team</h1>
+            
+                
             </div>
         </div>
         <footer>
@@ -272,7 +353,6 @@
                         </div>
                         <div class="span1">
                             <span>© 2024 legal </span>
-                            <!-- only for education purpose / credit goes to - https://rejouice.com/ -->
                         </div>
                     </div>
                 </div>

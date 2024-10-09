@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
 @font-face {
     font-family: rejo;
     src: url(./Fonts/Rejouice-Headline.ttf);
@@ -66,7 +68,7 @@ html, body{
     z-index: 6;
     height: 67vh;
     width: 100vw;
-    background-color: #35c007;
+    background-color: #6ec651;
 }
 .menu-header{
     height: 40px;
@@ -585,8 +587,8 @@ html, body{
     overflow: hidden;
 }
 .page6 .page6-text .seat .seat-span:hover h2{
-    transform: translateY(-400%);
-    transition: transform 1s ease-in-out;
+    transform: translateY(-809%);
+    transition: transform 9s ease-in-out;
 }
 .page7{
     height: 100vh;
@@ -895,12 +897,12 @@ footer .footer-bottom h1 span{
 
 
 .typee{
-    font-size: 105px;         
+    font-size: 95px;         
     font-weight: bold;       
     text-align: center;      
     margin: 0;
     padding: 50px 0;
-    margin-bottom:450px;
+    margin-bottom:600px;
 }
 
 
@@ -945,3 +947,101 @@ footer .footer-bottom h1 span{
     background-color: #000;
     opacity: .5;
 }
+
+.closing{
+    background-color: rgb(79, 8, 8);
+    opacity: .8;
+}
+
+.borderr {
+        height: 1px;
+        width: 100vw; /* Spanning the entire viewport width */
+        background-color: rgb(71, 71, 71); 
+        margin: 0; 
+        padding: 0;
+ }
+    
+/********************************************************/
+
+
+ /* Page styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.page3 {
+    background: linear-gradient(to right, rgb(243, 243, 118), rgb(99, 251, 99), rgb(243, 243, 118));
+    padding: 2rem 0; /* Add padding for the top and bottom */
+}
+
+.page3-text {
+    text-align: center;
+    padding-top: 2rem; /* Adjust top padding for spacing */
+}
+
+h1 {
+    font-size: 2.5rem; /* Ensure the heading has a consistent size */
+    color: black;
+}
+
+/* Section container styles */
+.section__container {
+    max-width: 1200px; /* Define a max-width */
+    margin: auto;
+    padding: 3rem 1rem;
+}
+
+/* Explore header styles */
+.explore__header {
+    margin-bottom: 1rem;
+}
+
+/* Adjusting the explore__grid for centering */
+.explore__grid {
+    margin-top: 2rem;
+    display: flex; /* Change to flexbox */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items horizontally */
+    gap: 1.5rem; /* Keep your existing gap between cards */
+}
+
+/* Card styles */
+.explore__card {
+    background-color: #71ff8d;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid black;
+    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 300px; /* Fixed width for cards */
+}
+
+.explore__card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.explore__card h3, .explore__card h4 {
+    color: black;
+    margin-bottom: 0.5rem;
+}
+
+.explore__card p {
+    color: black;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .explore__grid {
+        grid-template-columns: 1fr; /* Stack cards on top of each other on small screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .explore__grid {
+        grid-template-columns: repeat(2, 1fr); /* Adjust columns for medium screens */
+    }
+}
+
+      

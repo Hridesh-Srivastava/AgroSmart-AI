@@ -310,7 +310,7 @@ const typed = new Typed('.multi-text', {
   strings: [
       "Welcome to SmartAgro AI",
       "We're aiming to transform agriculture with AI",
-      "Join us as we predict harvests for a more sustainable future."
+      "Join us as we predict harvests for a sustainable future."
   ],
   typeSpeed: 75,
   backSpeed: 75,
@@ -339,6 +339,9 @@ menu.onclick=()=>{
   menu.classList.toggle('active');
 }
 
+close.onclick=()=>{
+  close.classList.toggle('active');
+}
 
 document.getElementById("bt1").addEventListener("click" , () => {
   document.getElementById("bt1").classList.add("bt");
@@ -423,3 +426,69 @@ const typed6 = new Typed('.multi-text6', {
   loop: true,
 });
 
+
+const typed9 = new Typed('.multi-text9', {
+  strings: [
+      "We are currently working on :",
+      'Shaping Smart Agriculture ↴ '
+  ],
+  typeSpeed: 75,
+  backSpeed: 75,
+  backDelay: 1000,
+  loop: true,
+});
+
+
+const typed10 = new Typed('.multi-text10', {
+  strings: [
+      "Engineered By SRHU Pioneers",
+      'Engineered By SRHU Pioneers'
+  ],
+  typeSpeed: 75,
+  backSpeed: 75,
+  backDelay: 1000,
+  loop: true,
+});
+
+const typed11 = new Typed('.multi-text11', {
+  strings: [
+      "Connect with us :",
+      'Connect with us :'
+  ],
+  typeSpeed: 75,
+  backSpeed: 75,
+  backDelay: 1000,
+  loop: true,
+});
+
+document.getElementById("close").addEventListener('click' , () => {
+  document.getElementById("close").classList.add("closing");
+  setTimeout(() => {
+    document.getElementById("close").classList.remove("closing");
+
+  },100);
+});
+
+
+const typed12 = new Typed('.multi-text12', {
+  strings: [
+      "About Us ",
+      'About Us '
+  ],
+  typeSpeed: 75,
+  backSpeed: 75,
+  backDelay: 1000,
+  loop: true,
+});
+
+
+const typed14 = new Typed('.multi-text14', {
+  strings: [
+      "Contact Us ",
+      "Contact Us "
+  ],
+  typeSpeed: 75,
+  backSpeed: 75,
+  backDelay: 1000,
+  loop: true,
+});
