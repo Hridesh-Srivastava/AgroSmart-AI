@@ -267,10 +267,10 @@ closeBtn.addEventListener('click',() => {
 function swiper(){
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: 5,
-    spaceBetween: 10,
+    spaceBetween: 20,
     loop: true,
     autoplay: {
-      delay: 600,
+      delay: 1100,
       disableOnInteraction: false,
     },
   });
@@ -418,7 +418,7 @@ const typed6 = new Typed('.multi-text6', {
       "SmartAgro",
       "Developed",
       "By",
-      "SRHU"
+      "SRHU " 
   ],
   typeSpeed: 75,
   backSpeed: 75,
@@ -486,6 +486,30 @@ const typed14 = new Typed('.multi-text14', {
   strings: [
       "Contact Us ",
       "Contact Us "
+  ],
+  typeSpeed: 75,
+  backSpeed: 75,
+  backDelay: 1000,
+  loop: true,
+});
+
+
+const typed16 = new Typed('.multi-text16', {
+  strings: [
+      "See Our Vision in Action Below ↴ ",
+      "See Our Vision in Action Below ↴ "
+  ],
+  typeSpeed: 75,
+  backSpeed: 75,
+  backDelay: 1000,
+  loop: true,
+});
+
+
+const typed17 = new Typed('.multi-text17', {
+  strings: [
+      "What our clients are saying? ",
+      "What our clients are saying? "
   ],
   typeSpeed: 75,
   backSpeed: 75,

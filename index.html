@@ -35,6 +35,12 @@
             transform: scale(1.15);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
           }
+          .white-line {
+            height: 2px; 
+            width: 100%; 
+            background-color: white; 
+        }
+        
           
     </style>
 </head>
@@ -101,11 +107,11 @@
 
             <div class="page2-top">
                 <div class="first-text">
-                    <div id="one"><h3><span class="multi-text1"></span></h3></div>
-                    <div id="two"><h3><span class="multi-text2"></span></h3></div>
+                    <div id="one"><h3> <i class="fa-solid fa-chevron-right"></i> <span class="multi-text1"></span> _</h3></div>
+                    <div id="two"><h3> <i class="fa-solid fa-chevron-right"></i> <span class="multi-text2"></span> _</h3></div>
                     </div>
                 <div class="second-text">
-                    <h3><span class="multi-text3"></span></h3>
+                    <h3> <i class="fa-solid fa-chevron-right"></i> <span class="multi-text3"></span> _</h3>
                 </div>
             </div>
             <div class="page2-top-border"></div>
@@ -123,7 +129,7 @@
 
         <div style="background:linear-gradient(to right,rgb(243, 243, 118), rgb(99, 251, 99), rgb(243, 243, 118));" class="page3">
             <div style="overflow:visible;margin-top:-800px;" class="page3-text">
-               <h1><span class="multi-text9"></span></h1>
+               <h1 style="font-weight: bold;"><i class="fa-solid fa-chevron-right"></i> <span class="multi-text9"></span> _</h1>
                 <section style="margin-top: -50px;" class="section__container explore__container">
                     <div class="explore__header">
                       <div class="explore__nav">
@@ -172,9 +178,9 @@
 <br>
 
 <br>
-<h1 style="text-align: center;font-size:4rem;color:rgb(21, 159, 21);"><span class="multi-text4"></span></h1>
-
-        <div class="page4">
+<h1 style="text-align: center;font-size:4rem;color:rgb(21, 159, 21);"><i class="fa-solid fa-chevron-right"></i> <span class="multi-text4"></span> _</h1>
+<br>
+        <div class="page4" style="margin-top: -10px;">
             <div class="page4-text">
                
                 <h1><a style="text-decoration:none;color:black;" href="./services/service.html"><i class="ri-corner-down-right-line"></i> <span class="multi-text5"></span> <i class="fa-solid fa-money-bill-wheat"></i></a></h1>
@@ -258,9 +264,10 @@
                 </div>
             </div>
         </div></div>
-        <div class="page8">
+        
+        <div class="page8" style="margin-top:150px;">
             <div class="text">
-                <h1>Get in touch.</h1>
+                <h1 style="font-size: 3rem;font-weight:bold"><i class="fa-solid fa-chevron-right"></i> <span class="multi-text16"></span> _ </h1>
             </div>
             <div class="page8-top-border"></div>
             <div class="swiper mySwiper">
@@ -314,15 +321,57 @@
                 </div>
             </div>
         </div>
-        <div class="page9">
-            <div class="page9-text">
-            
-                
+
+
+        <div class="page8" style="margin-top: -150px;background:linear-gradient(to right, rgb(131, 238, 131) , rgb(226, 229, 86), rgb(131, 238, 131),rgb(226, 229, 86))">
+            <div class="text">
+                <h2 style="font-size: 4rem;"><i class="fa-solid fa-chevron-right"></i> <span class="multi-text17"></span> _</h2>
+            </div>
+            <div class="page8-top-border"></div>
+            <div class="swiper mySwiper" style="width:2300px;">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img height="275" style="border-radius:12px;" src="./Assets/client1.jpg" alt="img1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img height="275" style="border-radius:12px;" src="./Assets/client2.jpg" alt="img2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img height="275" style="border-radius:12px;" src="./Assets/client3.jpg" alt="img3">
+                    </div> 
+                    <div class="swiper-slide">
+                        <img height="275" style="border-radius:12px;" src="./Assets/client4.jpg" alt="img4">
+                    </div>
+                    <div class="swiper-slide">
+                        <img height="275" style="border-radius:12px;" src="./Assets/client1.jpg" alt="img1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img height="275" style="border-radius:12px;" src="./Assets/client2.jpg" alt="img2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img height="275" style="border-radius:12px;" src="./Assets/client3.jpg" alt="img3">
+                    </div> 
+                    <div class="swiper-slide">
+                        <img height="275" style="border-radius:12px;" src="./Assets/client4.jpg" alt="img4">
+                    </div>  
+                </div>
             </div>
         </div>
-        <footer>
+ 
+
+        <footer style=" margin-top: -150px;" >
+            
+
             <div class="footer-top">
-                <div class="first">
+                <div style="margin-top:-100px;overflow:visible;" class="footer-bottom">
+                    <h1>
+                        <span class="multi-text6" style="font-size: 13rem;"></span> 
+                        <div class="white-line"></div>
+                    </h1>
+                    
+                </div>
+                
+                <!-- <div class="first">
                     <div class="first-top">
                         <h2>Relax. We got you.</h2>
                         <button>Take a seat</button>
@@ -356,13 +405,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div style="margin-top:-100px;overflow:visible;" class="footer-bottom">
-                <h1 style="color:green;">
-                    <span class="multi-text6"></span>
-                    
-                </h1>
-            </div>
+            </div> -->
+            
         </footer>
 
     </div>
