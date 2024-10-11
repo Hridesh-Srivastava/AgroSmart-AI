@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../style.css">
     <style>
        #touch:hover{
-        opacity:.56;
+        opacity:.5;
         background: rgb(221, 208, 208);
        }
        .footer-container {
@@ -42,6 +42,11 @@
             padding: 2rem 3%;
         }
     }
+    #hov:hover{
+        color:rgb(0, 255, 0);
+        transform: scale(1.13);    
+        font-weight: bold;
+    }
     </style>
 </head>
 <body>
@@ -62,23 +67,19 @@
                     </div>
                     
                     <div class="links">
-                        <h3><a style="color:black;text-decoration:none;" href="../index.html">Home &rarr; </a></h3>
+                        <h3></h3>
                         <!-- <h3><a style="color:black;text-decoration:none;" href="https://forms.srhu.edu.in/jobs/">Apply Now &rarr;</a></h3> -->
-                        <h3><a style="text-decoration:none;color:black;" href="../services/service.html">Our Services &rarr;</a></h3>
-                        <h3><a style="text-decoration:none;color:black;" href="#">About Us &rarr;</a> </h3>
-                        <h3> <a style="text-decoration:none;color:black;" href="../contactUs/contact.html">Contact Us &rarr;</a></h3>
-                        <button id="bt1" style="background-color: rgb(6, 59, 6);color:red;"><a style="text-decoration:none;color:red;" href="https://srhu.edu.in/our-story/">Explore More About SRHU</a> </button>
+                        <h3></h3>
+                        <h3> </h3>
+                        <h3> </h3>
+                        <button id="bt1" ></button>
                     </div>
                 </div>
                 <div class="menu-border"></div>
                 <div class="small-links">
-                    <h4 id="date"></h4>
+                    <!-- <h4 id="date"></h4> -->
                     <div class="social">
-                        <h2 style="margin-right:40px;">
-                      <a style="text-decoration:none;color:black;" href="https://x.com/SRHUniversity?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><p style="font-weight:normal">  Connect with us :   </p> <i class="fa-brands fa-square-x-twitter"></i></a>  
-                      <a style="text-decoration:none;color:black;" href="https://www.instagram.com/srhusocial/?hl=en"><i class="fa-brands fa-instagram"></i> </a>  
-                      <a style="text-decoration:none;color:black;" href="https://www.linkedin.com/school/s-r-h-u/"><i class="fa-brands fa-linkedin"></i> </a>  
-                      <a style="text-decoration:none;color:black;" href="https://www.facebook.com/SRHUOfficial/"><i class="fa-brands fa-facebook"></i></a>  
+                        <h2>
                      </h2>
                  </div>
                 </div>
@@ -86,12 +87,38 @@
             <!-- <div style="background-color: rgb(74, 167, 53);" class="cursor"><h4 style="text-align:center;font-weight:normal;color:white;">Innovate Farming!</h4></div> -->
             <video autoplay loop muted src="../Assets/AboutTop.mp4"></video>
             <div class="inner-content">
+                <header class="header">
+                  
+                    <h2 style="font-size: 2.5rem;" href="#" class="logo"> <a style="color: white;text-decoration:none" href="https://srhu.edu.in/">SmartAgro</a></h2>
+                   
+
+                  
+                    <!-- <i style="color: white;" class="fa-solid fa-bars" id="menu-icon"></i> -->
+                
+                   
+                    <nav class="navbar">
+                        <a style="font-size: 3rem;margin-right:300px" href="#home" class="ros1 active" data-default-text="Home" data-active-text="Home"></a>
+                        <a style="font-size: 1.3rem;" href="../index.html" class="ros2" id="hov" data-default-text="Home" data-active-text="Home">Home &rarr;</a>
+                        <a style="font-size: 1.3rem;" href="../services/service.html" class="ros2" id="hov" data-default-text="Our Services" data-active-text="Our Services">Our Services &rarr;</a>
+                        <a style="font-size: 1.3rem;" href="#" class="ros3" id="hov" data-default-text="About Us" data-active-text="About Us">About Us &rarr;</a>
+                        <a style="font-size: 1.3rem;" href="../contactUs/contact.html" class="ros5" id="hov" data-default-text="Contact Us" data-active-text="Contact Us">Contact Us &rarr;</a>
+                    </nav>
+                </header> 
                 <nav>
-                    <h2><a href="https://srhu.edu.in/">SmartAgro by SRHU</a></h2>
-                    <h2 id="menu"><a href="#">Menu</a></h2>
+                    <h2></h2>
+                    <h2 id="menu"></h2>
                 </nav>
-                <h2 style="color:rgb(255, 255, 255)" class="typee">
-                    <span class="multi-text"></span>
+                <h2 style="color:rgb(255, 255, 255);margin-top:-100px" class="typee">
+                    <span class="multi-textC"></span>
+                    <br>
+                    <p style="font-size:1.5rem;font-weight:normal">At SmartAgro, we are dedicated to transforming modern agriculture through innovative solutions tailored to the unique challenges
+                        <br>
+                        of farming. Our approach focuses on enhancing productivity and sustainability by providing precise insights and actionable data.
+                        <br>
+                        With a commitment to empowering farmers, we strive to make agriculture smarter, more efficient, and better equipped to
+                        <br>
+                        meet the demands of the future. Engineered for agricultural excellence, we are innovators from SRHU.</p>
+
             </h2>
             </div>
         </div>
@@ -105,7 +132,7 @@
  
     <div class="page8-top-border"></div>
     <div class="swiper mySwiper" style="width:2500px;">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper" style="margin-top: 1px;overflow:visible">
             <div class="swiper-slide">
                 <img id="touch" height="405" style="border-radius:12px;" src="../Assets/AboutSwipe1.jpg" alt="img1">
             </div>
@@ -187,8 +214,20 @@ const typedZ = new Typed('.multi-textZ', {
 
 const typedB = new Typed('.multi-textB', {
     strings: [
-        "Engineered By SRHU Pioneers",
-        "Engineered By SRHU Pioneers",
+        
+        "Precision-Driven Agriculture Revolution ↴",
+        "Precision-Driven Agriculture Revolution ↴"
+        
+    ],
+    typeSpeed: 75,
+    backSpeed: 75,
+    backDelay: 1000,
+    loop: true,
+  });
+const typedC = new Typed('.multi-textC', {
+    strings: [
+        "About Us :",
+        "About Us :"
     ],
     typeSpeed: 75,
     backSpeed: 75,
