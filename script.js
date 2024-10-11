@@ -413,18 +413,18 @@ const typed5 = new Typed('.multi-text5', {
 });
 
 
-const typed6 = new Typed('.multi-text6', {
-  strings: [
-      "SmartAgro",
-      "Developed",
-      "By",
-      "SRHU " 
-  ],
-  typeSpeed: 75,
-  backSpeed: 75,
-  backDelay: 1000,
-  loop: true,
-});
+// const typed6 = new Typed('.multi-text6', {
+//   strings: [
+//       "SmartAgro",
+//       "Developed",
+//       "By",
+//       "SRHU " 
+//   ],
+//   typeSpeed: 75,
+//   backSpeed: 75,
+//   backDelay: 1000,
+//   loop: true,
+// });
 
 
 const typed9 = new Typed('.multi-text9', {

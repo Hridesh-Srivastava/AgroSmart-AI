@@ -765,7 +765,7 @@ html, body{
     transform-origin: bottom left;
 }
 footer{
-    height: 100vh;
+    height: 50vh;
     width: 100vw;
     background-color:#0E0E0E;
 }
@@ -1043,4 +1043,6 @@ h1 {
         grid-template-columns: repeat(2, 1fr); /* Adjust columns for medium screens */
     }
 }
+
+
 
