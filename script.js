@@ -184,6 +184,7 @@ svg.addEventListener("mouseleave", ()=>{
   })
 })
 }
+
 function page7TopAnim(){
   gsap.from(".page7 .page7-top .top-text h3", {
     y: 60,
@@ -452,8 +453,8 @@ const typed10 = new Typed('.multi-text10', {
 
 const typed11 = new Typed('.multi-text11', {
   strings: [
-      "Connect with us :",
-      'Connect with us :'
+      "Unveil AI in Action",
+      "Unveil AI in Action"
   ],
   typeSpeed: 75,
   backSpeed: 75,
@@ -516,3 +517,12 @@ const typed17 = new Typed('.multi-text17', {
   backDelay: 1000,
   loop: true,
 });
+
+// let menuIcon=document.querySelector("#menu-icon");
+// let navbar=document.querySelector('.navbar');
+
+// menuIcon.onclick=()=>{
+//     menuIcon.classList.toggle('fa-rectangle-xmark');
+//     navbar.classList.toggle('active');
+// }
+
