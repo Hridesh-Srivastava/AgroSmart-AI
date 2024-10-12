@@ -518,6 +518,18 @@ const typed17 = new Typed('.multi-text17', {
   loop: true,
 });
 
+
+const typed19 = new Typed('.multi-text19', {
+  strings: [
+      "Connect with us : ",
+      "Connect with us : "
+  ],
+  typeSpeed: 75,
+  backSpeed: 75,
+  backDelay: 1000,
+  loop: true,
+});
+
 // let menuIcon=document.querySelector("#menu-icon");
 // let navbar=document.querySelector('.navbar');
 

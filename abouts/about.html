@@ -30,7 +30,7 @@
         align-items: center;
         flex-wrap: wrap;
         padding: 2rem 9%;
-        background:linear-gradient(to right, black, rgb(91, 89, 89), black);
+        background:linear-gradient(to right, black, rgb(92, 89, 89), black);
         margin-right:-30px;
        font-weight: bolder;
     }
@@ -161,15 +161,17 @@
     </div>
 </div>
 <div class="footer-container">
-    <footer class="footer">
+    <footer class="footer">                    
+        <h1 style="color: white;font-size:6rem;margin-top:-200px;"><a style="text-decoration:none;color:whitesmoke;" href="https://srhu.edu.in/">SmartAgro</a></h1>
+
         <div class="footer-text">
-            <p style="color:white">&copy; Hridesh | All Rights Reserved.</p>
+         <h4 style="color: white;font-size:1.2rem;font-weight:normal;margin-left:-680px;" id="date1"></h4> 
         </div>
-        <div class="social-media">
-        <a href="https://www.linkedin.com/in/hridayesh-srivastava-9575901bb/"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://twitter.com/Hrideshhhh"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://github.com/Hridesh-Srivastava"><i class="fa-brands fa-github"></i></a>
-        <a href="https://stackoverflow.com/users/24522628/hridesh-srivastava?tab=profile"><i class="fa-brands fa-stack-overflow"></i></a>
+        <div class="social-media" style="color: whitesmoke;gap:0px;margin-top:-50px;">
+      <h1 style="color: whitesmoke;font-weight:normal;font-size:1.5rem"><i class="fa-solid fa-chevron-right"></i>  <span class="multi-textU"></span> _</h1><a id="tou" style="text-decoration: none;background:transparent;" href="https://www.linkedin.com/school/s-r-h-u/?originalSubdomain=in"><i class="fa-brands fa-linkedin"></i></a>
+        <a id="tou" style="text-decoration: none;background:transparent" href="https://x.com/SRHUniversity?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa-brands fa-x-twitter"></i></a>
+        <a id="tou" style="text-decoration: none;background:transparent" href="https://www.instagram.com/srhusocial/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+        <a id="tou" style="text-decoration: none;background:transparent" href="https://www.youtube.com/channel/UCLMUq8dVU0UTJ4ibcgH8wXw"><i class="fa-brands fa-youtube"></i></a>
     </div>
     </footer>
     </div>
@@ -235,6 +237,19 @@ const typedC = new Typed('.multi-textC', {
     loop: true,
   });
 
+const typedU = new Typed('.multi-textU', {
+    strings: [
+        "Connect with us :",
+        "Connect with us :"
+    ],
+    typeSpeed: 75,
+    backSpeed: 75,
+    backDelay: 1000,
+    loop: true,
+  });
+
+  const date1 = new Date().getFullYear();
+document.getElementById("date1").innerHTML = `© ${date1} SmartAgro | All Rights Reserved.`
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
