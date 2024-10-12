@@ -1,0 +1,137 @@
+html,body,#root{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 100px;
+}
+
+#root{
+    background:rgb(0, 0, 0);
+    color:white
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+  
+
+  .text-section {
+    width: 50%;
+  }
+  
+  .text-section h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .text-section p {
+    font-size: 1.5rem;
+    color: #555;
+  }
+  
+
+  .canvas-section {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(0, 0, 0);
+  }
+  
+  .canvas-section canvas {
+    width: 100%;
+    height: 500px;
+    background-color:black;
+  }
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 0.8rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(18, 18, 18, 0.2);
+    background: rgba(81, 80, 80, 0.2);
+    backdrop-filter: blur(30px);
+  }
+  
+  .logo {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: normal;
+  }
+  
+  .navbar {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .navbar a {
+    font-size: 1.1rem; 
+    color: whitesmoke; 
+    margin-left: 0.5rem; 
+    font-weight: normal;
+    transition: color 0.3s ease, border-bottom 0.3s ease; 
+    position: relative; 
+  }
+  
+  .navbar a:hover,
+  .navbar a.active {
+    color: #15ff00;
+    transform: scale(1.13);
+    
+  }
+  .navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white; 
+    transition: width 0.3s ease-in-out; 
+  }
+  .navbar a:hover::after,
+  .navbar a.active::after {
+    width: 100%; 
+  }  
+.footer-container {
+    width: 100%;
+    background:linear-gradient(to right, black, rgb(92, 89, 89), black);
+    padding: 40px;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: fixed; */
+    bottom: 0;
+    left: 0;
+  }
+  
+  .footer-left h2 {
+    font-size: 3.6rem;
+    font-weight: bold;
+  }
+  
+  .footer-left p {
+    font-size: 1rem;
+  }
+  
+  .footer-right h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .social-links a {
+    margin-right: 15px;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    text-decoration: none;
+  }
+  
+  .social-links a:hover {
+    color: gray;
+  }
+  
