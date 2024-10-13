@@ -2,6 +2,7 @@
   "name": "agrosmart-react",
   "private": true,
   "version": "0.0.0",
+  "homepage": ".",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,13 +11,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mui/material": "^6.1.3",
+    "@mui/system": "^6.1.3",
     "@react-three/drei": "^9.114.3",
     "@react-three/fiber": "^8.17.10",
     "@react-three/postprocessing": "^2.16.3",
     "@types/three": "^0.169.0",
+    "axios": "^1.7.7",
     "gsap": "^3.12.5",
+    "locomotive-scroll": "^4.1.4",
+    "maath": "^0.10.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.53.0",
+    "react-icons": "^5.3.0",
+    "react-router-dom": "^6.27.0",
     "three": "^0.169.0",
     "typed.js": "^2.1.0"
   },
