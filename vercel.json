@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "Backend/index.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "AgroSmart-react/package.json",
+        "use": "@vercel/static-build"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "Backend/index.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "AgroSmart-react/$1"
+      }
+    ],
+    "regions": ["sfo1"]
+  }
+  
