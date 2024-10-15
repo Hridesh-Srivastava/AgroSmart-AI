@@ -3,9 +3,559 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SmartAgro AI</title>
+    <link rel="shortcut icon" href="./Assets/logo11.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;  
+            scrollbar-width: none;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+          
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 5%;
+            background: rgba(39, 38, 38, 0.2);
+            backdrop-filter: blur(44px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navbar a {
+            font-size: 1.3rem;
+            color: #fff;
+            text-decoration: none;
+            margin-left: 30px;
+            transition: color 0.3s, border-bottom 0.3s;
+            position: relative;
+        }
+
+        .navbar a:hover {
+            color: #15ff00;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #fff;
+            transition: width 0.3s;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+        }
+
+        .main-content {
+            padding: 50px 5%;
+            position: relative;
+        }
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            transition: transform 0.3s, opacity 0.3s;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(65px);
+        }
+
+        .service-card.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: scale(1.10);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            color: #64ff55;
+            margin-bottom: 15px;
+        }
+
+        .service-description {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        #scroller {
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            position: relative;
+            padding: 20px 0;
+          background: linear-gradient(to right, #cdff50, #6efe5b, #cdff50); 
+        }
+
+        #scroller::-webkit-scrollbar {
+            display: none;
+        }
+
+        #scroller-in {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll 40s linear infinite;
+        }
+
+        #scroller h4 {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-right: 20px;
+            transition: all linear 0.3s;
+            color: #000;
+            -webkit-text-stroke: 2px #ffffff;
+            text-shadow: 0px 5px 10px black;
+        }
+
+        #scroller h4:hover {
+            color: #ff0000;
+            -webkit-text-stroke: 2px #000000;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        #quote {
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            background-color: #1a1a1a;
+        }
+
+        #quote p {
+            font-size: 2rem;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        #quote p:hover{
+            color:rgb(98, 255, 63);
+        }
+        #quote img {
+            position: absolute;
+            height: 60px;
+        }
+
+        #quote #colon1 {
+            left: 15%;
+            top: 25%;
+        }
+
+        #quote #colon2 {
+            bottom: 25%;
+            right: 15%;
+        }
+
+        .footer-container {
+            background: linear-gradient(to right, black, rgb(92, 89, 89), black);
+            padding: 40px 5%;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .social-media {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-media h1 {
+            font-size: 1.4rem;
+            font-weight: normal;
+            margin-right: -173px;
+            margin-top: -35px;
+        }
+
+        .social-media a {
+            color: #fff;
+            font-size: 1.7rem;
+            transition: color 0.3s;
+            margin-top: 45px;
+        }
+
+        .social-media a:hover {
+            opacity: .4;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar {
+                margin-top: 20px;
+            }
+
+            .navbar a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer > * {
+                margin-bottom: 20px;
+            }
+
+            #scroller h4 {
+                font-size: 2rem;
+            }
+
+            #quote p {
+                font-size: 1.5rem;
+            }
+        }
+
+
+        #scroller2 {
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+            padding: 20px 0;
+            background: linear-gradient(to right, #c7fc41, #66ff51, #c7fc41);
+        }
+        
+        #scroller2::-webkit-scrollbar {
+            display: none; 
+        }
+        
+        .scroller-out {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll-left-to-right 40s linear infinite; 
+        }
+        
+        #scroller2 h4 {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-right: 20px;
+            transition: all linear 0.3s;
+            color: #000;
+            -webkit-text-stroke: 2px #ffffff;
+            text-shadow: 0px 5px 10px black;
+        }
+        
+        #scroller2 h4:hover {
+            color: #ff0000;
+            -webkit-text-stroke: 2px #000000;
+        }
+        
+
+        @keyframes scroll-left-to-right {
+            0% {
+                transform: translateX(-100%); 
+            }
+            100% {
+                transform: translateX(0%); 
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #scroller2 h4 {
+                font-size: 2rem;
+            }
+        }
+        
+        
+    </style>
 </head>
 <body>
+    <header class="header">
+        <h2 class="logo"><a style="color: whitesmoke;text-decoration:none;" href="https://srhu.edu.in/" target="_blank">SmartAgro</a></h2>
+        <nav class="navbar">
+            <a href="./index.html" id="hov">Home &rarr;</a>
+            <a href="#" id="hov">Our Services &rarr;</a>
+            <a href="./about.html" id="hov">About Us &rarr;</a>
+            <a href="/react-app#/contact" id="hov">Contact Us &rarr;</a>
+        </nav>
+    </header>
+
+    <video class="background-video" autoplay loop muted>
+        <source src="./Assets/services.mp4" type="video/mp4">
+    </video>
+
+    <main class="main-content">
+        <h1><i class="fa-solid fa-chevron-right"></i> <span class="multi-text66"></span> _</h1>
+        <h2 style="text-align: center;">See our services below.</h2>
+        <br>
+        <br>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🌾</div>
+                <h3 class="service-title">AI-Powered Crop Monitoring</h3>
+                <p class="service-description">Utilize advanced AI algorithms to monitor crop health, detect diseases, and predict yields with unprecedented accuracy.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💧</div>
+                <h3 class="service-title">Smart Irrigation Systems</h3>
+                <p class="service-description">Optimize water usage with IoT-enabled irrigation systems that consider soil moisture, weather forecasts, and crop-specific needs.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3 class="service-title">Precision Farming Analytics</h3>
+                <p class="service-description">Get data-driven insights on soil health, fertilizer requirements, and optimal planting times to maximize your farm's productivity.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚁</div>
+                <h3 class="service-title">Drone-based Crop Spraying</h3>
+                <p class="service-description">Employ autonomous drones for precise and efficient application of pesticides and fertilizers, reducing waste and environmental impact.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌤️</div>
+                <h3 class="service-title">Weather Forecasting & Alerts</h3>
+                <p class="service-description">Stay ahead of the weather with our AI-powered forecasting system, providing timely alerts for frost, hail, and other adverse conditions.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3 class="service-title">Farm Management Software</h3>
+                <p class="service-description">Streamline your operations with our comprehensive farm management platform, integrating all aspects of your agricultural business.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌱</div>
+                <h3 class="service-title">Soil Health Analysis</h3>
+                <p class="service-description">Utilize advanced sensors and AI to analyze soil composition, nutrient levels, and microbial activity for optimal crop growth.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🤖</div>
+                <h3 class="service-title">Automated Harvesting</h3>
+                <p class="service-description">Implement AI-driven robotic systems for efficient and precise harvesting, reducing labor costs and increasing yield.</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="scroller">
+        <div id="scroller-in">
+            <h4>SMART FARMING</h4>
+            <h4>AI-POWERED AGRICULTURE</h4>
+            <h4>PRECISION FARMING</h4>
+            <h4>SUSTAINABLE AGRICULTURE</h4>  
+        </div>
+       
+        <div id="scroller-in">
+            <h4>SMART FARMING</h4>
+            <h4>AI-POWERED AGRICULTURE</h4>
+            <h4>PRECISION FARMING</h4>
+            <h4>SUSTAINABLE AGRICULTURE</h4>  
+        </div>
+       
+    </div>
+
+
+    <div id="scroller2">
+        <div class="scroller-out">
+            <h4>DATA-DRIVEN GROWTH</h4>
+            <h4>TECHNOLOGY FOR FARMERS</h4>
+            <h4>OPTIMIZED YIELD MANAGEMENT</h4>
+            <h4>ENVIRONMENTAL STEWARDSHIP</h4>
+        </div>
+        <div class="scroller-out">
+            <h4>DATA-DRIVEN GROWTH</h4>
+            <h4>TECHNOLOGY FOR FARMERS</h4>
+            <h4>OPTIMIZED YIELD MANAGEMENT</h4>
+            <h4>ENVIRONMENTAL STEWARDSHIP</h4>            
+        </div>
+    </div>
     
+
+    <div id="quote">
+        <p>
+            SmartAgro AI redefines agriculture through innovation, harnessing the power of data to enhance productivity.
+Our intelligent solutions empower farmers with insights that transform traditional practices into sustainable growth.
+With every harvest, we pave the way for a greener future, ensuring food security for generations to come.
+        </p>
+        <img
+          id="colon1"
+          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg"
+          alt=""
+        />
+        <img
+          id="colon2"
+          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-right.svg"
+          alt=""
+        />
+    </div>
+
+    <div class="footer-container">
+        <footer class="footer">
+            <div class="footer-left">
+                <h1><a style="text-decoration: none;color:whitesmoke;" href="https://srhu.edu.in/" target="_blank">SmartAgro</a></h1>
+                <div class="footer-text">
+                    <h4 id="date"></h4> 
+                </div>
+            </div>
+            <div class="social-media">
+                <h1><span class="multi-text19"></span></h1>
+                <a id="tou" href="https://www.linkedin.com/school/s-r-h-u/?originalSubdomain=in" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a id="tou" href="https://x.com/SRHUniversity?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a id="tou" href="https://www.instagram.com/srhusocial/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a id="tou" href="https://www.youtube.com/channel/UCLMUq8dVU0UTJ4ibcgH8wXw" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      
+        const typedU = new Typed('.multi-text19', {
+            strings: [
+                "Connect with us :",
+                "Connect with us :"
+            ],
+            typeSpeed: 75,
+            backSpeed: 75,
+            backDelay: 1000,
+            loop: true,
+        });
+        const typed66 = new Typed('.multi-text66', {
+            strings: [
+                "Our Services :",
+                "Our Services :"
+            ],
+            typeSpeed: 75,
+            backSpeed: 75,
+            backDelay: 1000,
+            loop: true,
+        });
+
+      
+        const date = new Date().getFullYear();
+        document.getElementById("date").innerHTML = `© ${date} SmartAgro | All Rights Reserved.`;
+
+        // Infinite scroll
+        const scrollers = document.querySelectorAll('#scroller-in');
+        scrollers.forEach((scroller) => {
+            scroller.addEventListener('animationend', () => {
+                scroller.style.transform = 'translateX(0)';
+                void scroller.offsetWidth;
+                scroller.style.animation = 'none';
+                setTimeout(() => {
+                    scroller.style.animation = '';
+                }, 0);
+            });
+        });
+
+
+        const scrollers2 = document.querySelectorAll('.scroller-out'); // Updated class selector
+scrollers2.forEach((scroller) => {
+    scroller.addEventListener('animationend', () => {
+        scroller.style.transform = 'translateX(-100%)'; // Reset to left for left-to-right scroll
+        void scroller.offsetWidth; // Trigger reflow
+        scroller.style.animation = 'none';
+        setTimeout(() => {
+            scroller.style.animation = '';
+        }, 0);
+    });
+});
+
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => 
+                entry.target.classList.toggle('fade-in', entry.isIntersecting)
+            );
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.service-card').forEach((card) => {
+            observer.observe(card);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js" integrity="sha512-7Au1ULjlT8PP1Ygs6mDZh9NuQD0A5prSrAUiPHMXpU6g3UMd8qesVnhug5X4RoDr35x5upNpx0A6Sisz1LSTXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js" integrity="sha512-LQQDtPAueBcmGXKdOBcMkrhrtqM7xR2bVrnMtYZ8ImAZhFlIb5xrMqQ6uZviyeSB+4mYj89ta8niiCIQM1Gj0w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
