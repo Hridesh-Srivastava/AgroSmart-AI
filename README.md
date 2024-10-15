@@ -11,10 +11,13 @@ AgroSmart is an agriculture-based project leveraging AI to provide smart solutio
 
 ## Technologies Used
 
-- Frontend: React
+- Frontend: HTML5, CSS3, JavaScript, React
+- JS Libraries: Swiper js, Locomotive Scroll
+- React Framework: Three.js
 - Backend: Node.js, Express
 - Database: MongoDB
-- AI Frameworks: [Insert any AI frameworks used]
+- Design: Figma
+- AI Frameworks: 
 
 ## Getting Started
 
@@ -30,9 +33,10 @@ AgroSmart is an agriculture-based project leveraging AI to provide smart solutio
    ```bash
    git clone https://github.com/yourusername/AgroSmart.git
 Navigate to the project directory:
-
+```
 cd AgroSmart
-Install the dependencies for both frontend and backend:
+```
+## Install the dependencies for both frontend and backend:
 
 ## For the frontend:
 ```
@@ -55,10 +59,11 @@ cd Backend
 npm start
 ```
 In a new terminal, start the frontend application:
-
+```
 cd Frontend
-npm start
 
+npm start
+```
 ## Contributing
 Contributions are welcome! Please feel free to submit a pull request.
 
