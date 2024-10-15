@@ -1,6 +1,5 @@
 import mongoose , { Schema } from "mongoose";
 
-
 const userSchema = new Schema(
     {
         name : {
@@ -14,13 +13,7 @@ const userSchema = new Schema(
             required : true,
             unique : true,
             lowercase : true,
-            trim : true,
-            validate: {
-           validator: function (v) {
-           return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(v);
-          },
-           message: (props) => `${props.value} is not a valid email!`,
-           },
+            trim : true
         },
         message : {
             type : String,
