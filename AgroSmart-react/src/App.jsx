@@ -6,33 +6,33 @@ import Cyl from './Cyl';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import './style.css';
 import Typed from 'typed.js';
-
+import axios from 'axios';  // Added axios import
 
 const StarBackground = (props) => {
   const ref = useRef();
-    const [sphere] = useState(() => random.inSphere(new Float32Array(37000), { radius: 10 }));
-  
-    useFrame((state, delta) => {
-      ref.current.rotation.x -= delta / 10;
-      ref.current.rotation.y -= delta / 15;
-    });
-  
-    return (
-      <group rotation={[0, 0, Math.PI / 4]}>
-        <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
-          <PointMaterial transparent color="#fff" size={0.007} sizeAttenuation depthWrite={false} />
-        </Points>
-      </group>
-    );
+  const [sphere] = useState(() => random.inSphere(new Float32Array(37000), { radius: 10 }));
+
+  useFrame((state, delta) => {
+    ref.current.rotation.x -= delta / 10;
+    ref.current.rotation.y -= delta / 15;
+  });
+
+  return (
+    <group rotation={[0, 0, Math.PI / 4]}>
+      <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
+        <PointMaterial transparent color="#fff" size={0.007} sizeAttenuation depthWrite={false} />
+      </Points>
+    </group>
+  );
 };
 
 const StarsCanvas = () => (
   <div className="w-full h-auto fixed inset-0 z-[0]">
-<Canvas camera={{ position: [0, 0, 1] }}>
+    <Canvas camera={{ position: [0, 0, 1] }}>
       <Suspense fallback={null}>
-       <StarBackground />
-     </Suspense>
-   </Canvas>
+        <StarBackground />
+      </Suspense>
+    </Canvas>
   </div>
 );
 
@@ -72,13 +72,19 @@ const App = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // now we send the form data to a server
-    console.log('Form submitted:', formData);
-    setFormStatus('Thank you! We will get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
-    setTimeout(() => setFormStatus(''), 4000);
+    try {
+      // Send form data to the backend (DB connection)
+      const response = await axios.post('http://localhost:3000/api/v1/users/contact', formData);
+      console.log('Form submitted successfully:', response.data);
+      setFormStatus('Thank you! We will get back to you soon.');
+      setFormData({ name: '', email: '', message: '' }); 
+    } catch (error) {
+      console.error('Error submitting the form:', error.response?.data || error.message);
+      setFormStatus('Failed to submit the form. Please try again.');
+    }
+    setTimeout(() => setFormStatus(''), 4000);  
   };
 
   return (
@@ -101,11 +107,11 @@ const App = () => {
 
       <div className="content">
         <div className="form-section">
-        <h2>
-  <i className="fa-solid fa-phone" style={{ marginRight: '8px' }}></i>   
-     Call us on : <span style={{ color: '#64ff55'  }}>1800-1210266</span>
-</h2>
-        <h2><i className="fa-solid fa-envelope" style={{ marginRight: '8px' }}></i>  Write us on : <span style={{ color: '#64ff55'  }}>src@hihtindia.org</span> </h2>
+          <h2>
+            <i className="fa-solid fa-phone" style={{ marginRight: '8px' }}></i>   
+            Call us on : <span style={{ color: '#64ff55'  }}>1800-1210266</span>
+          </h2>
+          <h2><i className="fa-solid fa-envelope" style={{ marginRight: '8px' }}></i>  Write us on : <span style={{ color: '#64ff55'  }}>src@hihtindia.org</span> </h2>
           <h2>Or</h2>
           <h2>Contact us by filling out the fields below.</h2>
           <form className="contact-form" onSubmit={handleSubmit}>
@@ -163,38 +169,36 @@ const App = () => {
       </div>
 
       <footer className="footer-container">
-  <div className="footer-left">
-    <h2>
-      <a href="https://srhu.edu.in/" target="_blank" rel="noopener noreferrer">SmartAgro</a>
-    </h2>
-    <p>© {date} SmartAgro | All Rights Reserved.</p>
-  </div>
+        <div className="footer-left">
+          <h2>
+            <a href="https://srhu.edu.in/" target="_blank" rel="noopener noreferrer">SmartAgro</a>
+          </h2>
+          <p>© {date} SmartAgro | All Rights Reserved.</p>
+        </div>
 
-  <div className="footer-right">
-    <h3><span ref={typedRef}></span></h3>
-    <div className="social-links">
-      <a id="tou" href="https://www.linkedin.com/school/s-r-h-u/?originalSubdomain=in" target="_blank" rel="noopener noreferrer">
-        <i className="fa-brands fa-linkedin"></i>
-      </a>
-      <a id="tou" href="https://x.com/SRHUniversity?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" rel="noopener noreferrer">
-        <i className="fa-brands fa-x-twitter"></i>
-      </a>
-      <a id="tou" href="https://www.instagram.com/srhusocial/?hl=en" target="_blank" rel="noopener noreferrer">
-        <i className="fa-brands fa-instagram"></i>
-      </a>
-      <a id="tou" href="https://www.youtube.com/channel/UCLMUq8dVU0UTJ4ibcgH8wXw" target="_blank" rel="noopener noreferrer">
-        <i className="fa-brands fa-youtube"></i>
-      </a>
-    </div>
-  </div>
-</footer>
+        <div className="footer-right">
+          <h3><span ref={typedRef}></span></h3>
+          <div className="social-links">
+            <a id="tou" href="https://www.linkedin.com/school/s-r-h-u/?originalSubdomain=in" target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-linkedin"></i>
+            </a>
+            <a id="tou" href="https://x.com/SRHUniversity?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-x-twitter"></i>
+            </a>
+            <a id="tou" href="https://www.instagram.com/srhusocial/?hl=en" target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+            <a id="tou" href="https://www.youtube.com/channel/UCLMUq8dVU0UTJ4ibcgH8wXw" target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </footer>
     </>
   );
 };
 
 export default App;
-
-
 
 
 // import { useRef, useEffect } from 'react';
