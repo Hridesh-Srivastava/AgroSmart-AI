@@ -41,7 +41,7 @@ cd AgroSmart
 
 ## For the frontend:
 ```
-cd Frontend
+cd AgroSmart-react
 
 npm install
 ```
@@ -57,13 +57,13 @@ Start the backend server:
 ```
 cd Backend
 
-npm start
+npm run dev
 ```
 In a new terminal, start the frontend application:
 ```
-cd Frontend
+cd AgroSmart-react
 
-npm start
+npm run dev
 ```
 ## Contributing
 Contributions are welcome! Please feel free to submit a pull request.
