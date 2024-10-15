@@ -35,18 +35,25 @@ cd AgroSmart
 Install the dependencies for both frontend and backend:
 
 ## For the frontend:
-
+```
 cd Frontend
-npm install
-For the backend:
 
-cd ../Backend
 npm install
+```
+## For the backend:
+```
+cd ../Backend
+
+npm install
+
+```
 Running the Application
 Start the backend server:
-
+```
 cd Backend
+
 npm start
+```
 In a new terminal, start the frontend application:
 
 cd Frontend
@@ -56,4 +63,4 @@ npm start
 Contributions are welcome! Please feel free to submit a pull request.
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for more details.
