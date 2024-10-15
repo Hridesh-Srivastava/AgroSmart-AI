@@ -30,6 +30,7 @@ AgroSmart is an agriculture-based project leveraging AI to provide smart solutio
 ### Installation
 
 1. Clone the repository:
+   
    ```bash
    git clone https://github.com/Hridesh-Srivastava/AgroSmart.git
 Navigate to the project directory:
