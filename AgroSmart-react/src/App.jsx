@@ -6,7 +6,7 @@ import Cyl from './Cyl';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import './style.css';
 import Typed from 'typed.js';
-import axios from 'axios';  // Added axios import
+import axios from 'axios';  
 
 const StarBackground = (props) => {
   const ref = useRef();
@@ -100,6 +100,7 @@ const App = () => {
         <nav className="navbar">
           <a href="/index.html" className="ros1">Home</a>
           <a href="/service.html" className="ros2">Our Services</a>
+          <a href="/Backend/AgroAi/templates/index.html" className="ros2">Get Started</a>
           <a href="/about.html" className="ros3">About Us</a>
           <a href="#" className="ros5">Contact Us</a>
         </nav>

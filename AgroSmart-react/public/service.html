@@ -358,6 +358,8 @@
         <nav class="navbar">
             <a href="./index.html" id="hov">Home</a>
             <a href="#" id="hov">Our Services</a>
+            <a href="/Backend/AgroAi/templates/index.html">Get Started</a>
+
             <a href="./about.html" id="hov">About Us</a>
             <a href="/react-app#/contact" id="hov">Contact Us</a>
         </nav>
@@ -528,11 +530,11 @@ With every harvest, we pave the way for a greener future, ensuring food security
         });
 
 
-        const scrollers2 = document.querySelectorAll('.scroller-out'); // Updated class selector
+        const scrollers2 = document.querySelectorAll('.scroller-out'); 
 scrollers2.forEach((scroller) => {
     scroller.addEventListener('animationend', () => {
-        scroller.style.transform = 'translateX(-100%)'; // Reset to left for left-to-right scroll
-        void scroller.offsetWidth; // Trigger reflow
+        scroller.style.transform = 'translateX(-100%)'; 
+        void scroller.offsetWidth; 
         scroller.style.animation = 'none';
         setTimeout(() => {
             scroller.style.animation = '';

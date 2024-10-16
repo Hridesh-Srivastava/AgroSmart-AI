@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartAgro AI</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo11.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scrollbar-width:none;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+            
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 5%;
+            background: rgba(26, 26, 26, 0.2);
+            backdrop-filter: blur(48px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navbar a {
+            font-size: 1.3rem;
+            color: #fff;
+            text-decoration: none;
+            margin-left: 30px;
+            transition: color 0.3s, border-bottom 0.3s;
+            position: relative;
+        }
+
+        .navbar a:hover {
+            color: #15ff00;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #fff;
+            transition: width 0.3s;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+        }
+
+        .main-content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(18px);
+            border-radius: 10px;
+            box-shadow: 0 2px 16px rgb(0, 0, 0);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #3fff2d;
+        }
+
+        form {
+            display: grid;
+            gap: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #44d637;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.19rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #12b603;
+            opacity: .7;
+        }
+
+        #prediction {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(21, 255, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .footer-container {
+            background: linear-gradient(to right, black, rgb(92, 89, 89), black);
+            padding: 40px 5%;
+            margin-top: 40px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .social-media {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            
+        }
+
+        .social-media h1 {
+            font-size: 1.4rem;
+            font-weight: normal;
+            margin-right: -175px;
+            margin-top: -35px;
+        }
+
+        .social-media a {
+            color: #fff;
+            font-size: 1.7rem;
+            transition: opacity 0.3s;
+            margin-top: 45px;
+          
+        }
+
+        .social-media a:hover {
+            opacity: .4;
+        }
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar {
+                margin-top: 20px;
+            }
+
+            .navbar a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer > * {
+                margin-bottom: 20px;
+            }
+
+            .social-media h1 {
+                margin-right: 0;
+            }
+        }
+        #title1{
+            color:hsl(129, 100%, 64%);
+            font-size: 2.8rem;
+        }
+
+        #scroller {
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            position: relative;
+            padding: 20px 0;
+          background-color: rgba(60, 58, 58, 0.6);
+        }
+
+        #scroller::-webkit-scrollbar {
+            display: none;
+        }
+
+        #scroller-in {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll 40s linear infinite;
+        }
+
+        #scroller h4 {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-right: 20px;
+            transition: all linear 0.3s;
+            color: #000;
+            -webkit-text-stroke: 2px #ffffff;
+            text-shadow: 0px 5px 10px black;
+        }
+
+        #scroller h4:hover {
+            color: #0dfd00;
+            -webkit-text-stroke: 2px #000000;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        @media (max-width: 768px) {
+            #scroller h4 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h2 class="logo"><a style="color: whitesmoke;text-decoration:none;" href="https://srhu.edu.in/" target="_blank">SmartAgro</a></h2>
+        <nav class="navbar">
+            <a href="/AgroSmart-react/index.html" id="hov">Home</a>
+            <a href="#" id="hov">Our Services</a>
+            <a href="#">Get Started</a>
+            <a href="./about.html" id="hov">About Us</a>
+            <a href="/react-app#/contact" id="hov">Contact Us</a>
+        </nav>
+    </header>
+
+    <video class="background-video" autoplay loop muted>
+        <source src="{{ url_for('static', filename='backGro.mp4') }}" type="video/mp4">
+    </video>
+<h1 id="title1">SmartCrop: AI-Powered Crop Management System</h1>
+    <main class="main-content">
+        <h1><i class="fa-solid fa-chevron-right"></i> <span class="multi-text111"></span> _</h1>
+        <h2 style="text-align: center;font-size:1.22rem;font-weight:bold;">Enter two digit values below to predict the best crop based on soil and weather conditions.</h2>
+        <br>
+        
+        <form id="predict-form" action="/predict" method="POST">
+            <div>
+                <label for="N">N (Nitrogen) :</label>
+                <input type="text" id="N" name="N" required>
+            </div>
+            
+            <div>
+                <label for="P">P (Phosphorus) :</label>
+                <input type="text" id="P" name="P" required>
+            </div>
+            
+            <div>
+                <label for="K">K (Potassium) :</label>
+                <input type="text" id="K" name="K" required>
+            </div>
+            
+            <div>
+                <label for="temperature">Temperature :</label>
+                <input type="text" id="temperature" name="temperature" required>
+            </div>
+            
+            <div>
+                <label for="humidity">Humidity :</label>
+                <input type="text" id="humidity" name="humidity" required>
+            </div>
+            
+            <div>
+                <label for="ph">pH :</label>
+                <input type="text" id="ph" name="ph" required>
+            </div>
+            
+            <div>
+                <label for="rainfall">Rainfall :</label>
+                <input type="text" id="rainfall" name="rainfall" required>
+            </div>
+
+            <div>
+                <label for="model">Choose a model :</label>
+                <select id="model" name="model" required>
+                    <option style="color: #000;" value="RandomForest">Random Forest</option>
+                    <option style="color: #000;" value="KNN">KNN</option>
+                    <option style="color: #000;" value="HistGradientBoosting">Hist Gradient Boosting</option>
+                    <option style="color: #000;" value="DecisionTree">Decision Tree</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+        
+        <div style="font-size: 1.49rem;" id="prediction"></div>
+    </main>
+<br>
+<br>
+<div id="scroller">
+    <div id="scroller-in">
+                 <h4>INTELLIGENT FARMING</h4>   
+                 <h4>DATA-DRIVEN AGRICULTURE</h4>  
+                 <h4>ADVANCED CROP MONITORING</h4>   
+                 <h4>SUSTAINABLE HARVEST SOLUTIONS</h4>   
+    </div>
+   
+    <div id="scroller-in">
+        <h4>INTELLIGENT FARMING</h4>   
+        <h4>DATA-DRIVEN AGRICULTURE</h4>  
+        <h4>ADVANCED CROP MONITORING</h4>   
+        <h4>SUSTAINABLE HARVEST SOLUTIONS</h4>   
+    </div>
+   
+</div>
+    <div class="footer-container">
+        <footer class="footer">
+            <div class="footer-left">
+                <h1><a style="text-decoration: none;color:whitesmoke;" href="https://srhu.edu.in/" target="_blank">SmartAgro</a></h1>
+                <div class="footer-text">
+                    <h4 id="date"></h4> 
+                </div>
+            </div>
+            <div class="social-media">
+                <h1 style="color: whitesmoke;"><span class="multi-text19"></span></h1>
+                <a id="tou" href="https://www.linkedin.com/school/s-r-h-u/?originalSubdomain=in" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a style="margin-top: 52px;" id="tou" href="https://x.com/SRHUniversity?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="currentColor"><path d="M1 2h2.5L18.5 22h-2.5zM5.5 2h2.5L23 22h-2.5z"/><path d="M3 2h5v2h-5zM16 22h5v-2h-5z"/><path d="M18.5 2h3.5L5 22h-3.5z"/></g></svg></a>
+                <a id="tou" href="https://www.instagram.com/srhusocial/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a id="tou" href="https://www.youtube.com/channel/UCLMUq8dVU0UTJ4ibcgH8wXw" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+       
+        const typedU = new Typed('.multi-text19', {
+            strings: [
+                "Connect with us :",
+                "Connect with us :"
+            ],
+            typeSpeed: 75,
+            backSpeed: 75,
+            backDelay: 1000,
+            loop: true,
+        });
+        const typed111 = new Typed('.multi-text111', {
+            strings: [
+                "Crop Yield Prediction System",
+                "Crop Yield Prediction System"
+            ],
+            typeSpeed: 75,
+            backSpeed: 75,
+            backDelay: 1000,
+            loop: true,
+        });
+
+     
+        const date = new Date().getFullYear();
+        document.getElementById("date").innerHTML = `© ${date} SmartAgro | All Rights Reserved.`;
+
+       
+        document.getElementById('predict-form').onsubmit = async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
+                const predictionElement = document.getElementById('prediction');
+                predictionElement.innerText = `Predicted Crop Yield: ${data.prediction}`;
+                predictionElement.style.display = 'block';
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        };
+
+      
+        const inputs = document.querySelectorAll('input[type="text"], select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.style.boxShadow = '0 0 10px #15ff00';
+            });
+            input.addEventListener('blur', () => {
+                input.style.boxShadow = 'none';
+            });
+        });
+
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const scrollers = document.querySelectorAll('#scroller-in');
+        scrollers.forEach((scroller) => {
+            scroller.addEventListener('animationend', () => {
+                scroller.style.transform = 'translateX(0)';
+                void scroller.offsetWidth;
+                scroller.style.animation = 'none';
+                setTimeout(() => {
+                    scroller.style.animation = '';
+                }, 0);
+            });
+        });
+    </script>
+</body>
+</html>
