@@ -98,10 +98,10 @@ const App = () => {
           </a>
         </h2>
         <nav className="navbar">
-          <a href="/index.html" className="ros1">Home &rarr;</a>
-          <a href="/service.html" className="ros2">Our Services &rarr;</a>
-          <a href="/about.html" className="ros3">About Us &rarr;</a>
-          <a href="#" className="ros5">Contact Us &rarr;</a>
+          <a href="/index.html" className="ros1">Home</a>
+          <a href="/service.html" className="ros2">Our Services</a>
+          <a href="/about.html" className="ros3">About Us</a>
+          <a href="#" className="ros5">Contact Us</a>
         </nav>
       </header>
 
