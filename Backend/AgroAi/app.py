@@ -5,16 +5,29 @@ import pickle
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 
 models = {
-    'RandomForest': pickle.load(open('cropRandomForest.pkl', 'rb')),
-    'KNN': pickle.load(open('cropKNN.pkl', 'rb')),
-    'HistGradientBoosting': pickle.load(open('cropHistGradientBoosting.pkl', 'rb')),
-    'DecisionTree': pickle.load(open('cropDecisiontree.pkl', 'rb'))
-
+    'RandomForest': pickle.load(open('Backend/AgroAi/cropRandomForest.pkl', 'rb')),
+    'KNN': pickle.load(open('Backend/AgroAi/cropKNN.pkl', 'rb')),
+    'HistGradientBoosting': pickle.load(open('Backend/AgroAi/cropHistGradientBoosting.pkl', 'rb')),
+    'DecisionTree': pickle.load(open('Backend/AgroAi/cropDecisiontree.pkl', 'rb'))
+# Backend\AgroAi\cropDecisiontree.pkl
 }
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/home')
+def home():
+    return render_template('index.html')
+# @app.route('/home')
+# def home():
+#     return render_template('index.html')
+# @app.route('/home')
+# def home():
+#     return render_template('index.html')
+# @app.route('/home')
+# def home():
+#     return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
