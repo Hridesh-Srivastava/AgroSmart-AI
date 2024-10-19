@@ -5,6 +5,7 @@ const secret = 'myAI';
 const accessToken = jwt.sign({
      userId: '123'
      },
+
    secret,
     { 
         expiresIn: '1d' 
@@ -14,10 +15,11 @@ const accessToken = jwt.sign({
 const refreshToken = jwt.sign({
      userId: '123' 
     },
+    
      secret, 
      { 
         expiresIn: '10d'
      });
 
-console.log('Access Token:', accessToken);
-console.log('Refresh Token:', refreshToken);
+console.log('Access Token secret :', accessToken);
+console.log('Refresh Token secret :', refreshToken);
