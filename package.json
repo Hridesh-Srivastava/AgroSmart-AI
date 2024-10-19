@@ -1,0 +1,23 @@
+{
+  "name": "agri",
+  "version": "1.0.0",
+  "description": "AgroSmart is an agriculture-based project leveraging AI to provide smart solutions for farmers. This project aims to enhance agricultural productivity through precision farming and sustainable practices.",
+  "main": "index.js",
+  "workspaces": [
+    "AgroSmart-react", 
+    "Backend"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:frontend": "npm --prefix AgroSmart-react run dev",
+    "start:backend": "npm --prefix Backend run start",
+    "install:all": "npm install --workspaces",
+    "dev": "concurrently \"npm run start:frontend\" \"npm run start:backend\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
