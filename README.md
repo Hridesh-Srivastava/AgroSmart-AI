@@ -1,6 +1,6 @@
-# AgroSmart
+# SmartAgro AI
 
-AgroSmart is an agriculture-based project leveraging AI to provide smart solutions for farmers. This project aims to enhance agricultural productivity through precision farming and sustainable practices.
+SmartAgro is an agriculture-based project leveraging AI to provide smart solutions for farmers. This project aims to enhance agricultural productivity through precision farming and sustainable practices.
 
 ## Features
 
